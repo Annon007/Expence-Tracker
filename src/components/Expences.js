@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Expences.module.css";
 
 import ExpenceItems from "./ExpenceItems";

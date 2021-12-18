@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./ExpenceItems.module.css"
 
 // importing components
