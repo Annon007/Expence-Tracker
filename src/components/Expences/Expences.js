@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Expences.module.css";
 
 import ExpenceItems from "./ExpenceItems";
-import Card from "./Card";
+import Card from "../UI/Card";
 
 const Expences = (props) => {
 

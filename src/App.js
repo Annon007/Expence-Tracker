@@ -2,7 +2,7 @@
 import React from "react";
 
 import styles from './App.module.css';
-import Expences from './components/Expences';
+import Expences from './components/Expences/Expences';
 
 const App = () => {
   const expenses = [

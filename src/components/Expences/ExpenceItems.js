@@ -3,7 +3,7 @@ import styles from "./ExpenceItems.module.css"
 
 // importing components
 import ExpenceDate from "./ExpenceDate";
-import Card from "./Card";
+import Card from "../UI/Card";
 
 const ExpenceItems = (expence) => {
 
