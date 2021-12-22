@@ -3,6 +3,7 @@ import React from "react";
 
 import styles from './App.module.css';
 import Expences from './components/Expences/Expences';
+import NewExpence from "./components/NewExpence/NewExpence";
 
 const App = () => {
   const expenses = [
@@ -28,7 +29,7 @@ const App = () => {
   ];
   return (
     <div className={styles.appContainer}>
-      Let's get stated
+      <NewExpence />
       <Expences expence={expenses} />
 
     </div>
