@@ -4,9 +4,18 @@ import styles from "./NewExpence.module.css";
 // importing components
 
 import ExpenceForm from "./ExpenceForm";
-const NewExpence = () => {
+const NewExpence = (props) => {
+    const saveFormDataHandeler = (enteredFormData) => {
+        const receivedData = {
+            ...enteredFormData,
+            id: (Math.random() + Math.random()).toFixed(1).toString()
+        };
+        // console.log(receivedData);
+        props.onRenderExpenceList(receivedData);
+    }
+
     return <div className={styles.newExpence}>
-        <ExpenceForm />
+        <ExpenceForm onSaveFormData={saveFormDataHandeler} />
     </div>
 
 }

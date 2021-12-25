@@ -1,11 +1,12 @@
 // import logo from './logo.svg';
-import React from "react";
+import React, { useState } from "react";
 
 import styles from './App.module.css';
 import Expences from './components/Expences/Expences';
 import NewExpence from "./components/NewExpence/NewExpence";
 
 const App = () => {
+  const [updateExpences, setUpdateExpences] = useState();
   const expenses = [
     {
       id: 'e1',
@@ -27,10 +28,17 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+  const pushingToExpence = (data) => {
+    console.log(data)
+    expenses.push(data)
+    setUpdateExpences(expenses)
+  }
+  console.log(updateExpences);
+  // console.log(expenses)
   return (
     <div className={styles.appContainer}>
-      <NewExpence />
-      <Expences expence={expenses} />
+      <NewExpence onRenderExpenceList={pushingToExpence} />
+      <Expences expence={updateExpences ? updateExpences : expenses} />
 
     </div>
   );
