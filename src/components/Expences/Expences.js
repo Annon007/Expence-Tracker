@@ -18,7 +18,6 @@ const Expences = (props) => {
     return <ul>
         <Card className={styles.expenses}>
             <ExpenceFilter onChangeFilter={filterChangedHandeler} />
-            
             <ExpenceList expence={filteredExpences} filteredYear={filteredYear} />
         </Card>
     </ul>
