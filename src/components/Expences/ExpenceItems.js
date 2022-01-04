@@ -19,7 +19,7 @@ const ExpenceItems = (expence) => {
             <h2>{expence.props.title}</h2>
             <div className={styles.expenseItemPrice}> ${expence.props.amount}</div>
         </div>
-        <button value={title} name={"hello"} onClick={clickHandeler}>Click Me!</button>
+        {/* <button value={title} name={"hello"} onClick={clickHandeler}>Click Me!</button> */}
     </Card>
 }
 export default ExpenceItems;

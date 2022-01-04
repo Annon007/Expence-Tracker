@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Expences.module.css";
 
-import ExpenceItems from "./ExpenceItems";
 import ExpenceFilter from "./ExpenceFilter";
+import ExpenceList from "./ExpenceList";
 import Card from "../UI/Card";
 
 const Expences = (props) => {
@@ -11,9 +11,11 @@ const Expences = (props) => {
     const filterChangedHandeler = (selectedYear) => {
         setFilteredYear(selectedYear);
     }
-    return <Card className={styles.expenses}>
-        <ExpenceFilter onChangeFilter={filterChangedHandeler} />
-        {props.expence.map((ex, i) => <ExpenceItems props={ex} key={i} />)}
-    </Card>
+    return <ul>
+        <Card className={styles.expenses}>
+            <ExpenceFilter onChangeFilter={filterChangedHandeler} />
+            <ExpenceList expence={props.expence} filteredYear={filteredYear} />
+        </Card>
+    </ul>
 }
 export default Expences;
