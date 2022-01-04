@@ -8,10 +8,13 @@ const ExpenceList = (props) => {
     // if (year != props.filteredYear) {
     //     return <p>No Expence Found!</p>
     // }
-    console.log(props.expence[0].date)
+    // console.log(props.expence[0].date)
+    if(props.expence.length===0){
+        return <p className={styles.expenceListFallback}>No Expence Found!</p>
+    }
     return <ul>
         {props.expence.map((ex, i) => {
-            return new Intl.DateTimeFormat("en-us", { year: "numeric" }).format(new Date(ex.date)) === props.filteredYear ? <ExpenceItems props={ex} key={i} /> : ""
+            return  <ExpenceItems props={ex} key={i} />;
         })}
     </ul>
 };

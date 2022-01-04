@@ -10,11 +10,16 @@ const Expences = (props) => {
     const [filteredYear, setFilteredYear] = useState("2020");
     const filterChangedHandeler = (selectedYear) => {
         setFilteredYear(selectedYear);
-    }
+    };
+    const filteredExpences=props.expence.filter((el,i)=>{
+        return new Intl.DateTimeFormat("en-us", { year: "numeric" }).format(new Date(el.date))===filteredYear?el:"";
+    });
+    
     return <ul>
         <Card className={styles.expenses}>
             <ExpenceFilter onChangeFilter={filterChangedHandeler} />
-            <ExpenceList expence={props.expence} filteredYear={filteredYear} />
+            
+            <ExpenceList expence={filteredExpences} filteredYear={filteredYear} />
         </Card>
     </ul>
 }
