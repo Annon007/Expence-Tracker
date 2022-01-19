@@ -7,7 +7,8 @@ const ChartBar = (props) => {
   let barHeight = "0%";
 
   if (props.manValue > 0) {
-    barHeight = `${Math.round((props.value * props.manValue) * 100)}%`;
+    // barHeight = `${Math.round((props.value * props.manValue) * 100)}%`;
+    barHeight = Math.round((props.value / props.manValue) * 100) + "%";
   }
   return (
     <div className={styles.chartBar}>

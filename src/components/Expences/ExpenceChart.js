@@ -19,14 +19,15 @@ const ExpenceChart = props => {
         { label: "NOV", value: 0 },
         { label: "DEC", value: 0 },
     ];
-    const totalValue = ChartBarValues.map(el => el.value);
-    const maxValue = Math.max(...totalValue)
-    ChartExpence.map((el, i) => {
-        const date = el.date.getMonth();
+
+
+    ChartExpence.forEach((el, i) => {
+        const date = new Date(el.date).getMonth();
         ChartBarValues[date].value += el.amount;
         // ChartBarValues[i].label === date ? ChartBarValues[i].value += el.amount : "";
     })
-    return <Chart dataPoints={ChartBarValues} manValue={maxValue} />
+
+    return <Chart dataPoints={ChartBarValues} />
 }
 
 export default ExpenceChart;
