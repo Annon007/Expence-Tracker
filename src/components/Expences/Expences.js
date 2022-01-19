@@ -3,6 +3,7 @@ import styles from "./Expences.module.css";
 
 import ExpenceFilter from "./ExpenceFilter";
 import ExpenceList from "./ExpenceList";
+import ExpenceChart from "./ExpenceChart";
 import Card from "../UI/Card";
 
 const Expences = (props) => {
@@ -11,13 +12,14 @@ const Expences = (props) => {
     const filterChangedHandeler = (selectedYear) => {
         setFilteredYear(selectedYear);
     };
-    const filteredExpences=props.expence.filter((el,i)=>{
-        return new Intl.DateTimeFormat("en-us", { year: "numeric" }).format(new Date(el.date))===filteredYear?el:"";
+    const filteredExpences = props.expence.filter((el, i) => {
+        return new Intl.DateTimeFormat("en-us", { year: "numeric" }).format(new Date(el.date)) === filteredYear ? el : "";
     });
-    
+
     return <ul>
         <Card className={styles.expenses}>
             <ExpenceFilter onChangeFilter={filterChangedHandeler} />
+            <ExpenceChart expence={filteredExpences} />
             <ExpenceList expence={filteredExpences} filteredYear={filteredYear} />
         </Card>
     </ul>
